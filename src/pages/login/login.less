@@ -1,0 +1,129 @@
+.Box {
+  width: 100%;
+  height: 100%;
+  background: url(../../../static/bg-bottom.png) center bottom no-repeat;
+}
+.Box::after {
+  content: '';
+  background:  url(../../../static/bg-top.png) center center no-repeat;
+  width: 311px;
+  height: 244px;
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.Box::before {
+  content: '';
+  background:  url(../../../static/bg-topL.png) center center no-repeat;
+  width: 118px;
+  height: 107px;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.contentBox {
+  box-sizing: border-box;
+  width: 830px;
+  height:450px;
+  background-color: #fff;
+  background-image: url("../../../static/bg-contnet.png");
+  background-repeat: no-repeat;
+  background-position:left center ;
+  background-size: 400px auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  box-shadow: 0 0 20px rgba(0,0,0,.15);
+  .formBox {
+    padding-left: 450px;
+    margin-top: 85px;
+    width: 45%;
+    .loginForm {
+      width: 280px;
+      .user,.password {
+        position: relative;
+        /deep/ .el-input__inner {
+          padding: 0 0 0 45px;
+          box-sizing: border-box;
+        }
+      }
+      .user::before,
+      .password::before {
+        content: '';
+          width: 20px;
+          height: 20px;
+          background: url(../../../static/icon/password.png) center center no-repeat;
+          background-size: cover;
+        position: absolute;
+        z-index: 99999;
+        top: 50%;
+        left: 10px;
+        transform: translateY(-50%);
+        }
+      .user::before {
+        background: url(../../../static/icon/user.png) center center no-repeat;
+        background-size: cover;
+      }
+      }
+    }
+    & .loginForm .el-form-item__content {
+      box-sizing: border-box;
+      height: 35px;
+      width: 280px;
+      line-height: 35px;
+      border-radius: 5px;
+      border: 1px solid rgba(153, 153, 153, 1);
+      overflow: hidden;
+      margin-bottom: 25px;
+      overflow: hidden;
+      .el-input {
+        line-height: 35px;
+        width: 280px;
+        display: inline-block;
+      }
+
+    }
+    .user{
+      margin-top: 30px;
+    }
+    .password {
+      margin-bottom: 45px;
+    }
+    .login {
+      width: 280px;
+      height: 40px;
+      font-size: 16px;
+      color: #fff;
+      background-color: #fb6251;
+      border: 0;
+      box-shadow: 0 0 10px #fb6251;
+      border-radius: 20px;
+      text-align: center;
+    }
+    .tool {
+      width: 280px;
+      font-size: 12px;
+      color: #666;
+      text-align: right;
+    }
+  }
+
+.title {
+  font-size: 18px;
+  font-family: 'Arial Normal', 'Arial';
+  color: #333;
+  font-weight: 400;
+  color: rgba(251, 98, 81, 1);
+}
+.title::before {
+  content: '';
+  display: inline-block;
+  vertical-align: bottom;
+  margin-right: 10px;
+  width: 5px;
+  height: 20px;
+  background-color: rgba(251, 94, 90, 1);
+}

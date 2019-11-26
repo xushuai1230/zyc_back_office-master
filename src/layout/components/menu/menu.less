@@ -1,0 +1,296 @@
+.menu{
+  //position: relative;
+  position:fixed;
+  top:60px;
+  bottom:0;
+  z-index:10;
+  float:left;
+  width:50px;
+  //height:100%;
+  transition:width .3s;
+  background: rgba(249,85,93,1);
+  background: -moz-linear-gradient(top, rgba(249,85,93,1) 0%, rgba(249,151,102,1) 100%);
+  background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(249,85,93,1)), color-stop(100%, rgba(249,151,102,1)));
+  background: -webkit-linear-gradient(top, rgba(249,85,93,1) 0%, rgba(249,151,102,1) 100%);
+  background: -o-linear-gradient(top, rgba(249,85,93,1) 0%, rgba(249,151,102,1) 100%);
+  background: -ms-linear-gradient(top, rgba(249,85,93,1) 0%, rgba(249,151,102,1) 100%);
+  background: linear-gradient(to bottom, rgba(249,85,93,1) 0%, rgba(249,151,102,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f9555d', endColorstr='#f99766', GradientType=0 );
+
+  &-list{
+    background-color:transparent;
+    padding: 0;
+    margin:10px 0;
+    a{
+      display:block;
+      position:relative;
+      text-decoration: none;
+      color:#fff;
+      transition:border-left.3s;
+      text-shadow:0 3px 5px rgba(41,5,6,.4);
+      &:hover{
+        background-color:rgba(168, 34, 38, .2);
+      }
+    }
+    .menu-icon,
+    .menu-txt{
+      display:inline-block;
+    }
+    .menu-txt{
+      display:none;
+      font-size:16px;
+      font-weight:bold;
+      text-shadow:0 3px 5px rgba(41,5,6,.4);
+    }
+    .menu-icon{
+      speak: none;
+      font-weight: 400;
+      font-variant: normal;
+      text-transform: none;
+      line-height: 1;
+      vertical-align: middle;
+      display: inline-block;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+
+      font-family: "fontFamily" !important;
+      font-size:22px;
+      font-style: normal;
+      margin-top:0;
+      color:#fff;
+      text-shadow: none;
+      &-1{
+        &:before{
+          content: "\e60c";
+        }
+      }
+      &-2{
+        &:before{
+          content: "\e613";
+        }
+      }
+      &-3{
+        &:before{
+          content: "\e725";
+        }
+      }
+      &-4{
+        &:before{
+          content: "\e675";
+        }
+      }
+    }
+    ul{
+      margin:0;
+      padding:0;
+      list-style: none;
+      background:transparent;
+    }
+  }
+  .el-menu{
+    border-right:0;
+    &.el-menu--collapse{
+      width:50px;
+    }
+    &-item{
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow:ellipsis;
+      text-shadow:0 3px 5px rgba(41,5,6,.4);
+      &.is-active,
+      &:hover{
+        color:#fff;
+      }
+      &:hover{
+        background-color:rgba(168, 34, 38, .2);
+      }
+      &.is-active{
+        background-color:rgba(168, 34, 38, .5);
+      }
+    }
+    &.el-menu--popup{
+      .el-menu-item{
+        height:36px;
+        line-height:36px;
+        color:#333;
+        font-size:14px;
+        &:hover,
+        &.is-active{
+          background-color:rgba(0, 0, 0, 0.2);
+        }
+      }
+    }
+  }
+  .el-submenu{
+    &__title{
+      padding-left:10px !important;
+      text-align:center;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow:ellipsis;
+      padding-right:10px;
+    }
+    .el-menu{
+      &-item{
+        display:none;
+      }
+    }
+  }
+}
+.el-submenu__title,
+.el-menu-item{
+  height:45px;
+  line-height:45px;
+  color:#fff;
+  font-size:0;
+  padding-right:10px;
+}
+.switch-menu,
+.menu .el-radio-group{
+  position:absolute;
+  top:50%;
+  margin-top:-20px;
+  right:0;
+  width:18px;
+  height:40px;
+  line-height:40px;
+  background-color:#fff;
+  border-radius:4px 0 0 4px;
+  color:#e7380c;
+  text-align:center;
+  cursor:pointer;
+  font-size:14px;
+  span{
+    display:block;
+    font-size:18px;
+    width:100%;
+    height:100%;
+  }
+}
+
+  /* 可以设置不同的进入和离开动画 */
+/* 设置持续时间和动画函数 */
+.slide-fade-enter-active {
+  transition: all .3s ease;
+}
+.slide-fade-leave-active {
+  transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+.slide-fade-enter, .slide-fade-leave-to
+  /* .slide-fade-leave-active for below version 2.1.8 */ {
+  transform: translateX(10px);
+  opacity: 0;
+}
+
+.el-submenu{
+  .el-menu-item{
+    height:36px;
+    line-height:36px;
+    font-size:14px;
+    color:#fff;
+    border-left:4px solid transparent;
+    &:hover{
+      background-color:rgba(168, 34, 38, .2);
+    }
+    //&.is-active{
+    //  background-color:rgba(168, 34, 38, .5);
+    //}
+    &.is-active{
+      border-left-color:#fff;
+    }
+  }
+  &__title{
+    &:hover{
+      background-color:rgba(168, 34, 38, .2);
+    }
+    i{
+      color:#fff;
+      font-size:16px;
+      margin-top:-8px;
+    }
+  }
+}
+
+.el-menu--vertical{
+  .el-menu--popup{
+    background: rgba(249,85,93,1);
+    background: -moz-linear-gradient(top, rgba(249,85,93,1) 0%, rgba(249,151,102,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(249,85,93,1)), color-stop(100%, rgba(249,151,102,1)));
+    background: -webkit-linear-gradient(top, rgba(249,85,93,1) 0%, rgba(249,151,102,1) 100%);
+    background: -o-linear-gradient(top, rgba(249,85,93,1) 0%, rgba(249,151,102,1) 100%);
+    background: -ms-linear-gradient(top, rgba(249,85,93,1) 0%, rgba(249,151,102,1) 100%);
+    background: linear-gradient(to bottom, rgba(249,85,93,1) 0%, rgba(249,151,102,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f9555d', endColorstr='#f99766', GradientType=0 );
+    .el-menu-item{
+      color:#fff;
+      font-size:14px;
+      &:focus,
+      &:hover{
+        background-color:rgba(168, 34, 38, 0.2);
+      }
+    }
+  }
+}
+.lang-en{
+  .main.opened{
+    .menu{
+      .el-submenu{
+        &__title{
+          padding-left:10px !important;
+        }
+        .el-menu-item{
+          padding-left:30px !important;
+        }
+      }
+      .el-tooltip{
+        padding-left:10px !important;
+      }
+      .el-menu-item{
+        padding-left:10px !important;
+      }
+    }
+  }
+}
+.el-menu--collapse{
+  .el-menu-item{
+    padding:0 !important;
+    text-align:center;
+    .el-tooltip{
+      padding-left: 10px !important;
+      padding-right:10px !important;
+    }
+  }
+}
+.main{
+  &.opened{
+    .menu{
+      width:200px;
+      .el-submenu__title{
+        text-align:left;
+        padding-right:40px;
+      }
+      .el-submenu__title,
+      .el-tooltip{
+        padding-left:20px !important;
+      }
+      .el-tooltip{
+        padding-left:20px !important;
+        padding-right:20px !important;
+      }
+      .glyphicon,
+      .menu-txt{
+        display: inline-block;
+      }
+      .menu-icon{
+        margin-right:5px;
+      }
+      .el-submenu{
+        .el-menu{
+          &-item{
+            display:block;
+          }
+        }
+      }
+    }
+  }
+}

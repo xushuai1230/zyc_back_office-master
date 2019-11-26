@@ -1,0 +1,108 @@
+[
+  {
+    "children": [
+      {
+        "children": [
+        ],
+        "text": "预约协议出单",
+        "url": "/main/bookingAgreement",
+        "img": "icon1",
+        "lev":2,
+        "menuId":"50199-1",
+        "isShow":false
+      },
+      {
+        "children": [
+        ],
+        "text": "非预约协议出单",
+        "url": "/main/noBookingAgreement",
+        "img": "icon1",
+        "lev":2,
+        "menuId":"50199-2",
+        "isShow":false
+      },
+      {
+        "children": [
+        ],
+        "text": "批量导入出单",
+        "url": "/main/batchImportIssue",
+        "img": "icon1",
+        "lev":2,
+        "menuId":"50199-3",
+        "isShow":false
+      },
+      {
+        "children": [
+        ],
+        "text": "投保单查询",
+        "url": "/main/queryInsurancePolicy",
+        "img": "icon1",
+        "lev":2,
+        "menuId":"50199-4",
+        "isShow":false
+      }
+    ],
+    "text": "投保管理",
+    "url": "#",
+    "img": "icon1",
+    "target": "mainFrame",
+    "lev":1,
+    "menuId":"50199",
+    "isShow":true
+  },
+  {
+    "children":[
+      {
+        "children":[
+        ],
+        "text": "保单查询打印",
+        "url": "/main/policyQueryPrinting",
+        "img": "icon2",
+        "lev":2,
+        "menuId":"50200-1",
+        "isShow":false
+      },
+      {
+        "children":[
+        ],
+        "text": "保单批改",
+        "url": "/main/policyCorrection",
+        "img": "icon2",
+        "lev":2,
+        "menuId":"50200-2",
+        "isShow":false
+      }
+    ],
+    "text": "保单管理",
+    "url": "#",
+    "img": "icon2",
+    "target": "mainFrame",
+    "lev":1,
+    "menuId":"50200",
+    "isShow":true
+  },
+  {
+    "children":[
+
+    ],
+    "text": "条款查询",
+    "url": "/main/clauseInquiry",
+    "img": "icon3",
+    "target": "mainFrame",
+    "lev":1,
+    "menuId":"50226",
+    "isShow":false
+  },
+  {
+    "children":[
+
+    ],
+    "text": "通知提醒",
+    "url": "/main/noticeReminding",
+    "img": "icon4",
+    "target": "mainFrame",
+    "lev":1,
+    "menuId":"50217",
+    "isShow":false
+  }
+]

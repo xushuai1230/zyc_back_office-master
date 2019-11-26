@@ -1,0 +1,37 @@
+@import 'config/mixins';
+.hide {
+  display: none;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+.ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.clear:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+input::-webkit-input-placeholder{
+  color:#ccc;
+}
+input::-moz-placeholder{   /* Mozilla Firefox 19+ */
+  color:#ccc;
+}
+input:-moz-placeholder{    /* Mozilla Firefox 4 to 18 */
+  color:#ccc;
+}
+input:-ms-input-placeholder{  /* Internet Explorer 10-11 */
+  color:#ccc;
+}

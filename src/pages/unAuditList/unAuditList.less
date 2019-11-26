@@ -1,0 +1,75 @@
+.main {
+  //margin-top: 20px;
+  padding: 40px 20px 20px;
+  //background-color: #fff;
+
+  width: 100%;
+  box-sizing: border-box;
+}
+.mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #000;
+}
+.personAdmin {
+  padding: 20px;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #fff;
+  box-shadow: 0 0 20px rgba(0,0,0,.15);
+  border-radius: 5px;
+  overflow: hidden;
+}
+.tableTitle{
+  position: relative;
+  &>h2 {
+    font-weight: 700;
+    font-style: normal;
+    font-size: 16px;
+    display: inline-block;
+    color: #4C4C4C;
+    padding-left: 10px;
+    position: relative;
+    background-color: #fff;
+    z-index: 9;
+    padding-right: 10px;
+  }
+  &>h2::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: '';
+    width: 5px;
+    height: 18px;
+    background-color: rgba(237, 109, 0, 1);
+    border-radius: 2px;
+  }
+  &>.dashedBorder {
+    display: inline-block;
+    width: 100%;
+    border-bottom: 1px dashed #699cf9;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+  }
+}
+.tableTotal {
+  /deep/ .el-table th, .el-table tr {
+    background-color: #eef0f5;
+  }
+  /deep/ .el-table thead {
+    color: #333;
+  }
+ span{
+    color: #558ff8;
+  }
+  .point:hover {
+    cursor: pointer;
+  }
+}
+.paginationClass {
+  float: right;
+  padding-top: 15px;
+}

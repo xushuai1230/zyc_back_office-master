@@ -1,0 +1,198 @@
+.main {
+  //margin-top: 20px;
+  padding: 40px 20px 20px;
+  //background-color: #fff;
+
+  width: 100%;
+  box-sizing: border-box;
+}
+.personAdmin {
+  padding: 20px;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #fff;
+  box-shadow: 0 0 20px rgba(0,0,0,.15);
+  border-radius: 5px;
+}
+.tableTitle{
+  margin-top: 25px;
+  position: relative;
+  &>h2 {
+    font-weight: 700;
+    font-style: normal;
+    font-size: 16px;
+    display: inline-block;
+    color: #4C4C4C;
+    padding-left: 10px;
+    position: relative;
+  }
+  &>h2::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: '';
+    width: 5px;
+    height: 18px;
+    background-color: rgba(237, 109, 0, 1);
+    border-radius: 2px;
+  }
+  &>.dashedBorder {
+    display: inline-block;
+    width: 87%;
+    border-bottom: 1px dashed #699cf9;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+  }
+  &>span {
+    i {
+      display: inline-block;
+      background: url(../../../static/icon/addPerson.png) center center no-repeat;
+      background-size: 22px 22px;
+      width: 22px;
+      height: 40px;
+      margin-right: 8px;
+      float: left;
+    }
+    float: right;
+    color: #699cf9;
+    font-size: 13px;
+    line-height: 40px;
+    padding-right: 8px;
+  }
+}
+.searchForm {
+  display: flex;
+  background-color: rgba(244, 245, 249, 1);
+  box-sizing: border-box;
+  border-radius: 5px;
+  padding: 25px 10px;
+  .el-form-item {
+    flex: 1;
+    margin-bottom: 0;
+    /deep/ .el-input > .el-input__inner{
+      width: 200px;
+      height: 30px;
+      box-sizing: border-box;
+    }
+  }
+  .serchBtn {
+    /deep/ .el-button--primary {
+      background-color: #f66f44;
+      border: 0;
+    }
+    /deep/ .el-button {
+      width: 110px;
+      height: 30px;
+      padding: 0;
+    }
+  }
+}
+.tableTotal {
+  /deep/ .el-table th, .el-table tr {
+    background-color: #eef0f5;
+  }
+  /deep/ .el-table thead {
+    color: #333;
+  }
+ span{
+    color: #558ff8;
+  }
+  .point:hover {
+    cursor: pointer;
+  }
+}
+.text-right {
+  text-align: right;
+  padding-top: 15px;
+}
+.addDialogForm {
+  padding-right: 30px;
+  /deep/ .el-form-item {
+  text-align: center;
+    margin-bottom: 10px;
+
+  }
+  /deep/ .el-input > .el-input__inner{
+    width: 200px;
+    height: 30px;
+    box-sizing: border-box;
+  }
+
+  /deep/ .el-form-item__content {
+    display: inline-block;
+    vertical-align: middle;
+  }
+  /deep/ .el-form-item__label {
+    display: inline-block;
+    float: none;
+    width: 30%;
+    text-align: right;
+    color: #f66f44;
+  }
+
+}
+.wid200 {
+  /deep/ .el-form-item__content {
+    width: 200px;
+
+  }
+}
+.btns {
+  background-color: rgba(248, 248, 250, 1);
+  position: absolute;
+  bottom: -40px;
+  width: 100%;
+  height: 50px;
+  left: 0;
+  text-align: center;
+  line-height: 50px;
+  .el-button {
+    width: 90px;
+    height: 30px;
+    padding: 0;
+    border-color: #f66f44;
+    color: #f66f44;
+  }
+  .el-button--primary {
+    background-color: #f66f44;
+    border-color: #f66f44;
+    color: #fff;
+    font-weight: 700;
+  }
+
+}
+.small {
+  /deep/ .el-dialog {
+    width: 430px;
+    .main {
+     overflow-y: auto;
+    }
+  }
+  .fontStyle {
+    color: #f66f44;
+position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+  }
+  .fontStyle.iconSuc {
+    top: 50%;
+  }
+  .iconSuccess {
+    color: #f66f44;
+    width: 42px;
+    height: 42px;
+    font-size: 28px;
+    line-height: 42px;
+    text-align: center;
+    font-weight: 700;
+    position: absolute;
+    top: 30%;
+    left: 49.5%;
+    transform: translate(-50%,-50%);
+    border: 1px solid #f66f44;
+    border-radius: 50%;
+  }
+}

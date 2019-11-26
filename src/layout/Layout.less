@@ -1,0 +1,229 @@
+@import "../styles/common/common";
+@import "../styles/common/reset";
+html{
+  min-height: 100%;
+}
+body{
+  background-color: #e8eef8;
+}
+.app-container{
+  height:100%;
+  background-color:@mainBgColor;
+}
+.mask {
+  z-index: 999;
+  background-color: rgba(0,0,0,.6);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  .modifypwd {
+    display: block;
+    width: 50px;
+    height: 50px;
+    //background-color: #f98b64;
+    //background:-webkit-gradient(radial, rgba(249,85,93,1) 0%, rgba(249,151,102,1) 100%);
+    //background: -moz-linear-gradient(radial, rgba(249,85,93,1) 0%, rgba(249,151,102,1) 100%);
+    //background: -webkit-linear-gradient(radial, rgba(249,85,93,1) 0%, rgba(249,151,102,1) 100%);
+    //background: -o-linear-gradient(radial, rgba(249,85,93,1) 0%, rgba(249,151,102,1) 100%);
+    //background: -ms-linear-gradient(radial, rgba(249,85,93,1) 0%, rgba(249,151,102,1) 100%);
+    border-radius: 50%;
+    border: 1px dashed #fff;
+    position: relative;
+    position: absolute;
+    right: 10%;
+    top: 10px;
+    i {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      display: block;
+      width: 45px;
+      height: 45px;
+      background: #f98b64 url(../../static/icon/midifyPwd.png) center center no-repeat;
+      background-size: 22px 22px;
+      border-radius: 50%;
+    }
+  }
+  .modifypwd::after {
+    content: '';
+    display: block;
+    width: 16px;
+    height: 42px;
+    background: url(../../static/icon/maskTop.png) 0 0 no-repeat;
+    background-size: cover;
+    position: absolute;
+    bottom: -45px;
+    left: -10px;
+  }
+  .font {
+    position: absolute;
+    top: 100px;
+    right: 40px;
+    color: #fff;
+    display: inline-block;
+    font-size: 14px;
+    text-align: center;
+    &> a {
+      color: #fff;
+      display: inline-block;
+      width: 75px;
+      height: 25px;
+      line-height: 25px;
+      border-radius: 3px;
+      border: 1px solid #fff;
+      background-color: #b7b7b7;
+      margin-right: 8px;
+    }
+    & > .none {
+      border: 0;
+      background-color: transparent;
+    }
+  }
+}
+.main{
+  height:calc(~"100% - 68px");
+  //&.opened{
+  //  .main-container{
+  //    margin-left:200px;
+  //  }
+  //}
+}
+.main-container{
+  //margin-left:50px;
+  //background-color:#e2e6ec;
+  height:100%;
+  //transition:margin-left .3s;
+  //.container-fluid{
+  //  padding:14px 20px 0;
+  //}
+}
+//.sidebar-container {
+//  position:relative;
+//  transition: width .28s;
+//  width: 200px;
+//  height:100%;
+//  //position: fixed;
+//  float:left;
+//  font-size: 0;
+//  z-index: 1001;
+//  overflow: hidden;
+//}
+//.hideSidebar{
+//  .sidebar-container{
+//    width:64px;
+//  }
+//}
+.app-main{
+  //height:calc(~"100% - 68px");
+  height: 100%;
+  //overflow-y:auto;
+}
+.addDialogForm {
+  padding: 20px 0;
+  /deep/ .el-form-item {
+    text-align: left;
+    margin: 0;
+    margin-bottom: 15px;
+  }
+  /deep/ .el-form-item__error {
+    padding: 0;
+  }
+
+  /deep/ .el-input > .el-input__inner{
+    width: 200px;
+    height: 30px;
+    box-sizing: border-box;
+  }
+
+  /deep/ .el-form-item__content {
+    display: inline-block;
+    vertical-align: middle;
+  }
+  /deep/ .el-form-item__label {
+    display: inline-block;
+    float: none;
+    width: 25%;
+    text-align: right;
+    color: #f66f44;
+  }
+
+}
+.btns {
+  background-color: rgba(248, 248, 250, 1);
+  position: absolute;
+  bottom: -40px;
+  width: 100%;
+  height: 50px;
+  left: 0;
+  text-align: center;
+  line-height: 50px;
+  .el-button {
+    width: 90px;
+    height: 30px;
+    padding: 0;
+    border-color: #f66f44;
+    color: #f66f44;
+  }
+  .el-button--primary {
+    background-color: #f66f44;
+    border-color: #f66f44;
+    color: #fff;
+    font-weight: 700;
+  }
+
+}
+.small {
+  /deep/ .el-dialog {
+    width: 490px!important;
+    margin-right: 20px;
+    margin-top: 60px!important;
+    position: relative;
+    .main {
+      overflow-y: auto;
+    }
+  }
+  /deep/ .el-dialog::after {
+    position: absolute;
+    top: -10px;
+    left: 68%;
+    display: block;
+    content: '';
+    width: 0;
+    height: 0;
+    border-width: 5px;
+    border-style: solid;
+    border-color:  transparent  transparent #a7c3f5 transparent ;
+  }
+}
+.tooltipBox {
+  position: relative;
+  .tooltip {
+    position: absolute;
+    display: inline-block;
+    line-height: 18px;
+    right: -155px;
+    top: 5px;
+    font-size: 12px;
+    width: 140px;
+    height: auto;
+    padding: 5px;
+    box-sizing: border-box;
+    background-color: #f8f8fa;
+color: #666;
+  }
+  .tooltip::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-width: 5px;
+    border-style: solid;
+    border-color:   transparent #f8f8fa transparent  transparent ;
+    top: 12%;
+    left:-10px;
+
+  }
+}

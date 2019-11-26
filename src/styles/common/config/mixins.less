@@ -1,0 +1,385 @@
+// @mixin
+@import './colors';
+@import './variables';
+// Remove floating
+.clearfix() {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+// set scrollbar styles
+.scrollBar() {
+  &::-webkit-scrollbar-track-piece {
+    background: #d3dce6;
+  }
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: #99a9bf;
+    border-radius: 20px;
+  }
+}
+
+// placeholder styles
+.placeholderStyle(@color, @opacity) {
+  &::-webkit-input-placeholder {
+    color: @color;
+    opacity: @opacity;
+  }
+  &:-moz-placeholder {
+    /* Firefox 18- */
+    color: @color;
+    opacity: @opacity;
+  }
+  &::-moz-placeholder {
+    /* Firefox 19+ */
+    color: @color;
+    opacity: @opacity;
+  }
+  &:-ms-input-placeholder {
+    color: @color;
+    opacity: @opacity;
+  }
+}
+
+// set radial gradient
+.gradient(@color-1, @color-2, @color-3) {
+  background: @color-2;
+  /* Old browsers */
+  background: -moz-radial-gradient(bottom, ellipse cover, @color-1 0%, @color-2 45%, @color-3 100%);
+  /* FF3.6-15 */
+  background: -webkit-radial-gradient(bottom, ellipse cover, @color-1 0%, @color-2 45%, @color-3 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: radial-gradient(ellipse at bottom, @color-1 0%, @color-2 45%, @color-3 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@color-1', endColorstr='@color-3', GradientType=1);
+  /* IE6-9 fallback on horizontal gradient */
+}
+
+// set relative
+.relative() {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+// set custom width relative
+.pct(@pct: 100) {
+  width: @pct;
+  position: relative;
+  margin: 0 auto;
+}
+
+// draw triangles
+.triangleUp (@width: @width/2, @height, @color) {
+  height: 0;
+  width: 0;
+  border-bottom: @height solid @color;
+  border-left: @width solid transparent;
+  border-right: @width solid transparent;
+}
+
+.triangleRight (@width: @width/2, @height, @color) {
+  height: 0;
+  width: 0;
+  border-left: @height solid @color;
+  border-top: @width solid transparent;
+  border-bottom: @width solid transparent;
+}
+
+.triangleDown (@width: @width/2, @height, @color) {
+  height: 0;
+  width: 0;
+  border-top: @height solid @color;
+  border-left: @width solid transparent;
+  border-right: @width solid transparent;
+}
+
+.triangleLeft (@width: @width/2, @height, @color) {
+  height: 0;
+  width: 0;
+  border-right: @height solid @color;
+  border-top: @width solid transparent;
+  border-bottom: @width solid transparent;
+}
+
+// 设置边框圆角
+.borderRadius(@radius: 50%) {
+  -webkit-border-radius: @radius;
+  -moz-border-radius: @radius;
+  -ms-border-radius: @radius;
+  -o-border-radius: @radius;
+  border-radius: @radius;
+}
+
+// 背景图片地址和大小
+.bis (@url) {
+  background-image: url(@url);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+// 固定定位左右居中
+.fixed-left-right (@index:99) {
+  position: fixed;
+  right: 0;
+  left: 0;
+  margin: auto;
+  z-index: @index;
+}
+
+// 固定定位上下左右居中
+.fixed-center (@index:99) {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: auto;
+  z-index: @index;
+}
+
+// 固定大小的定位上下左右居中
+.fixed-size-center (@index:99) {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  z-index: @index;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+// 绝对定位上下左右居中
+.center (@index:99) {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: @index;
+}
+
+// 绝对定位上下居中
+.tbcenter (@index:99) {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+  z-index: @index;
+}
+
+// 绝对定位左右居中
+.lrcenter (@index:99) {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: @index;
+}
+
+// 绝对定位上下左右居中
+.absolute-center (@index:99) {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: auto;
+  z-index: @index;
+}
+
+// 绝对定位上下居中
+.absolute-tb-center (@index:99) {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  z-index: @index;
+}
+
+// 按钮的样式
+.btn (@radius:.6rem) {
+  .borderRadius(@radius);
+  .tc;
+  display: inline-block;
+  font-size: @default-font;
+  background-color: @button-color;
+  color: @button-font-color;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.btn-active () {
+  background-color: @button-active-color;
+}
+
+.btn-block(@width:72%){
+  display:inline-block;
+  width:@width;
+  height:.8rem;
+  border-radius:.8rem;
+  background-color:@button-color;
+  color:@button-font-color;
+  box-shadow:0 .03rem .25rem rgba(153,0,0,.3);
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: transparent;
+  outline:0;
+}
+
+// 边框的样式
+.border (@border-color:@border-color) {
+  border: 1px solid @border-color;
+}
+
+.borderTop (@border-color:@border-color) {
+  border-top: 1px solid @border-color;
+}
+
+.borderBottom (@border-color:@border-color) {
+  border-bottom: 1px solid @border-color;
+}
+
+.borderLeft (@border-color:@border-color) {
+  border-left: 1px solid @border-color;
+}
+
+.borderRight (@border-color:@border-color) {
+  border-right: 1px solid @border-color;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 2) {
+  .border (@border-color:@border-color) {
+    border: 0.5px solid @border-color;
+  }
+  .borderTop (@border-color:@border-color) {
+    border-top: 0.5px solid @border-color;
+  }
+  .borderBottom (@border-color:@border-color) {
+    border-bottom: 0.5px solid @border-color;
+  }
+  .borderLeft (@border-color:@border-color) {
+    border-left: 0.5px solid @border-color;
+  }
+  .borderRight (@border-color:@border-color) {
+    border-right: 0.5px solid @border-color;
+  }
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 3) {
+  .border (@border-color:@border-color) {
+    border: 0.333333px solid @border-color;
+  }
+  .borderTop (@border-color:@border-color) {
+    border-top: 0.333333px solid @border-color;
+  }
+  .borderBottom (@border-color:@border-color) {
+    border-bottom: 0.333333px solid @border-color;
+  }
+  .borderLeft (@border-color:@border-color) {
+    border-left: 0.333333px solid @border-color;
+  }
+  .borderRight (@border-color:@border-color) {
+    border-right: 0.333333px solid @border-color;
+  }
+}
+
+// 透明度
+.opacity(@value) {
+  @filter-value: @value * 100;
+  filter: alpha(Opacity=@filter-value);
+  -moz-opacity: @value;
+  opacity: @value;
+}
+
+// box-sizing 兼容
+.boxSizing() {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+// flex 兼容
+.displayFlex() {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+}
+
+// transform: rotate 兼容
+.transformRotate(@degrees) {
+  -webkit-transform: rotate(@degrees);
+  -moz-transform: rotate(@degrees);
+  -ms-transform: rotate(@degrees);
+  -o-transform: rotate(@degrees);
+  transform: rotate(@degrees);
+}
+
+// transform:translateX 兼容
+.transformTranslateX(@height) {
+  -webkit-transform: translateX(@height);
+  -moz-transform: translateX(@height);
+  -ms-transform: translateX(@height);
+  -o-transform: translateX(@height);
+  transform: translateX(@height);
+}
+.transform(@transform){
+  -webkit-transform:@transform;
+  -moz-transform:@transform;
+  -ms-transform:@transform;
+  -o-transform:@transform;
+  transform:@transform;
+}
+// transition 兼容
+.transition() {
+  transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+}
+
+.tc(){
+  text-align:center;
+}
+.tl(){
+  text-align:left;
+}
+.tr(){
+  text-align:right;
+}
+.fs(@px){
+  font-size:unit(@px / 32, rem);
+}
+.pa(){
+  position: absolute;
+}
+.pr(){
+  position: relative;
+}
+.fl(){
+  float: left;
+}
+.fr(){
+  float:right;
+}
+.triangle-down(@num1, @num2, @color){
+  width:0;
+  height:0;
+  border-left:@num1 solid transparent;
+  border-right: @num1 solid transparent;
+  border-top:@num2 solid @color;
+}
+.ellipsis(){
+  overflow:hidden;
+  white-space:nowrap;
+  text-overflow:ellipsis;
+}
