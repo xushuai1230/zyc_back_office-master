@@ -11,7 +11,7 @@
     "build:sit": "node build/build-sit.js"
   },
   "dependencies": {
-    "axios": "^0.16.2",
+    "axios": "^0.21.1",
     "babel-polyfill": "^6.26.0",
     "element-ui": "^2.8.2",
     "es6-promise": "^4.2.5",
